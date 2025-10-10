@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitacora</title>
+    <link href="img/Logo.ico" rel="icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="navbar">
+        <a href="index.html">Unidad 1</a>
+        <a href="Unidad 2.html">Unidad 2</a>
+        <a href="Unidad 3.html">Unidad 3</a>
+    </div>
+    
+    
+    <div id="Diagrama" class="Diagrama">
+        <h1>Diagrama de flujo de la página web</h1>
+        <img src="img/FlowchartPagina.png">
+    </div>
+
+    <section>
+        <h1 class="tx1 diferente otro">Hola</h1>
+        <h1 class="tx1">Hola</h1>
+        <h1 class="tx1 otro">Hola</h1>
+    </section>
+
+    <div id="Ilustracion" class="Ilustracion">
+        <p>https://paola0024.github.io/Ilustracion/</p>
+        <iframe src="https://paola0024.github.io/Ilustracion/" width="%" height="100%"></iframe>
+    </div>
+
+<!--Los temas de Java (Inicio)-->
+    <div id="Java" class="Java">
+        <h1>Tablas hechas con ciclos FOR, While y Do While</h1>
+
+        <!-- Botones para las tablas -->
+        <button onclick="toggleTablaFor()">Tabla Animales Fantasticos</button>
+        <button onclick="toggleTablaWhile()">Animales Fantasticos que vuelan</button>
+        <button onclick="toggleTablaDoWhile()">Animales Fantasticos que renacen</button>
+
+        <!-- Contenedores de tablas -->
+        <div class="tabla-container" id="tablaFor"></div>
+        <div class="tabla-container" id="tablaWhile"></div>
+        <div class="tabla-container" id="tablaDoWhile"></div>
+
+        <script>
+            // Datos
+            const animales = [
+                { nombre: "Dragon", descripcion: "Escupe fuego" },
+                { nombre: "Fenix", descripcion: "Renace de las cenizas" },
+                { nombre: "Unicornio", descripcion: "Puede mantenerte con vida" },
+                { nombre: "Grifo", descripcion: "Vuela con gran velocidad" },
+                { nombre: "Escarbato", descripcion: "Le llama la atención cualquier cosa brillante" }
+            ];
+
+            const puedeVolar = [true, true, false, true, false];
+            const renace = [false, true, false, false, true];
+
+            // Variables 
+            let visibleFor = false;
+            let visibleWhile = false;
+            let visibleDoWhile = false;
+
+            // FUNCION FOR
+            function toggleTablaFor() {
+                const container = document.getElementById("tablaFor");
+                if (visibleFor) {
+                    container.innerHTML = "";
+                    visibleFor = false;
+                } else {
+                    let html = "<table><tr><th>#</th><th>Nombre</th><th>Descripcion</th></tr>";
+                    for (let i = 0; i < animales.length; i++) {
+                        html += `<tr>
+                            <td>${i+1}</td>
+                            <td>${animales[i].nombre}</td>
+                            <td>${animales[i].descripcion}</td>
+                        </tr>`;
+                    }
+                    html += "</table>";
+                    container.innerHTML = html;
+                    visibleFor = true;
+                }
+            }
+
+            // FUNCION WHILE 
+            function toggleTablaWhile() {
+                const container = document.getElementById("tablaWhile");
+                if (visibleWhile) {
+                    container.innerHTML = "";
+                    visibleWhile = false;
+                } else {
+                    let html = "<table><tr><th>#</th><th>Nombre</th><th>Descripcion</th></tr>";
+                    let i = 0, count = 1;
+                    while (i < animales.length) {
+                        if (puedeVolar[i]) {
+                            html += `<tr>
+                                <td>${count}</td>
+                                <td>${animales[i].nombre}</td>
+                                <td>${animales[i].descripcion}</td>
+                            </tr>`;
+                            count++;
+                        }
+                        i++;
+                    }
+                    html += "</table>";
+                    container.innerHTML = html;
+                    visibleWhile = true;
+                }
+            }
+
+            // FUNCION DO WHILE 
+            function toggleTablaDoWhile() {
+                const container = document.getElementById("tablaDoWhile");
+                if (visibleDoWhile) {
+                    container.innerHTML = "";
+                    visibleDoWhile = false;
+                } else {
+                    let html = "<table><tr><th>#</th><th>Nombre</th><th>Descripcion</th></tr>";
+                    let i = 0, count = 1;
+                    do {
+                        if (renace[i]) {
+                            html += `<tr>
+                                <td>${count}</td>
+                                <td>${animales[i].nombre}</td>
+                                <td>${animales[i].descripcion}</td>
+                            </tr>`;
+                            count++;
+                        }
+                        i++;
+                    } while (i < animales.length);
+                    html += "</table>";
+                    container.innerHTML = html;
+                    visibleDoWhile = true;
+                }
+            }
+        </script>
+    </div>
+<!--Los temas de Java (Fin)-->
+
+    <div id="Muckups" class="Muckups">
+        <h1>
+            Presentacion con Muckups, cambios y cosas nuevas en la B
+        </h1>
+        <iframe src="img/Presentación de Proyecto Holográfico Cromo Moderno Azul y Gris.pdf" width="100%" height="100%"></iframe>
+        <p>https://www.canva.com/design/DAG1V_-rPq4/FuO_kaX4roLJ1dSXesphig/edit?utm_content=DAG1V_-rPq4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton</p>
+    </div>
+
+    <footer id="Final" class="Final">
+        <p>
+            Jaqueline Paola Villa Carreón <br>
+            230328 <br>
+            Grupo A <br>
+            HTML y CSS3 adaptativo
+        </p>
+    </footer>
+</body>
+</html>
