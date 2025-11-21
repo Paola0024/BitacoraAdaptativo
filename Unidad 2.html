@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitacora</title>
+    <link href="img/Logo.ico" rel="icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="navbar">
+        <a href="index.html">Unidad 1</a>
+        <a href="Unidad 2.html">Unidad 2</a>
+        <a href="Unidad 3.html">Unidad 3</a>
+    </div>
+    
+    
+    <div id="Diagrama" class="Diagrama">
+        <h1>Diagrama de flujo de la página web</h1>
+        <img src="img/FlowchartPagina.png">
+    </div>
+
+    <section>
+        <h1 class="tx1 diferente otro">Hola</h1>
+        <h1 class="tx1">Hola</h1>
+        <h1 class="tx1 otro">Hola</h1>
+    </section>
+
+    <div id="Ilustracion" class="Ilustracion">
+        <h1>Ilustración adaptativa</h1> 
+        <iframe src="https://paola0024.github.io/Ilustracion/" width="%" height="100%"></iframe>
+        <br>
+        <a href="https://paola0024.github.io/Ilustracion/" target="_blank">Ir a la ilistración adaptativa</a>
+    </div>
+
+<!--Los temas de Java (Inicio)-->
+    <div id="Java" class="Java">
+        <h1>Tablas hechas con ciclos FOR, While y Do While</h1>
+
+        <!-- Botones para las tablas -->
+        <button onclick="toggleTablaFor()">Tabla Animales Fantasticos</button>
+        <button onclick="toggleTablaWhile()">Animales Fantasticos que vuelan</button>
+        <button onclick="toggleTablaDoWhile()">Animales Fantasticos que renacen</button>
+
+        <!-- Contenedores de tablas -->
+        <div class="tabla-container" id="tablaFor"></div>
+        <div class="tabla-container" id="tablaWhile"></div>
+        <div class="tabla-container" id="tablaDoWhile"></div>
+
+        <script>
+            // Datos
+            const animales = [
+                { nombre: "Dragon", descripcion: "Escupe fuego" },
+                { nombre: "Fenix", descripcion: "Renace de las cenizas" },
+                { nombre: "Unicornio", descripcion: "Puede mantenerte con vida" },
+                { nombre: "Grifo", descripcion: "Vuela con gran velocidad" },
+                { nombre: "Escarbato", descripcion: "Le llama la atención cualquier cosa brillante" }
+            ];
+
+            const puedeVolar = [true, true, false, true, false];
+            const renace = [false, true, false, false, true];
+
+            // Variables 
+            let visibleFor = false;
+            let visibleWhile = false;
+            let visibleDoWhile = false;
+
+            // FUNCION FOR
+            function toggleTablaFor() {
+                const container = document.getElementById("tablaFor");
+                if (visibleFor) {
+                    container.innerHTML = "";
+                    visibleFor = false;
+                } else {
+                    let html = "<table><tr><th>#</th><th>Nombre</th><th>Descripcion</th></tr>";
+                    for (let i = 0; i < animales.length; i++) {
+                        html += `<tr>
+                            <td>${i+1}</td>
+                            <td>${animales[i].nombre}</td>
+                            <td>${animales[i].descripcion}</td>
+                        </tr>`;
+                    }
+                    html += "</table>";
+                    container.innerHTML = html;
+                    visibleFor = true;
+                }
+            }
+
+            // FUNCION WHILE 
+            function toggleTablaWhile() {
+                const container = document.getElementById("tablaWhile");
+                if (visibleWhile) {
+                    container.innerHTML = "";
+                    visibleWhile = false;
+                } else {
+                    let html = "<table><tr><th>#</th><th>Nombre</th><th>Descripcion</th></tr>";
+                    let i = 0, count = 1;
+                    while (i < animales.length) {
+                        if (puedeVolar[i]) {
+                            html += `<tr>
+                                <td>${count}</td>
+                                <td>${animales[i].nombre}</td>
+                                <td>${animales[i].descripcion}</td>
+                            </tr>`;
+                            count++;
+                        }
+                        i++;
+                    }
+                    html += "</table>";
+                    container.innerHTML = html;
+                    visibleWhile = true;
+                }
+            }
+
+            // FUNCION DO WHILE 
+            function toggleTablaDoWhile() {
+                const container = document.getElementById("tablaDoWhile");
+                if (visibleDoWhile) {
+                    container.innerHTML = "";
+                    visibleDoWhile = false;
+                } else {
+                    let html = "<table><tr><th>#</th><th>Nombre</th><th>Descripcion</th></tr>";
+                    let i = 0, count = 1;
+                    do {
+                        if (renace[i]) {
+                            html += `<tr>
+                                <td>${count}</td>
+                                <td>${animales[i].nombre}</td>
+                                <td>${animales[i].descripcion}</td>
+                            </tr>`;
+                            count++;
+                        }
+                        i++;
+                    } while (i < animales.length);
+                    html += "</table>";
+                    container.innerHTML = html;
+                    visibleDoWhile = true;
+                }
+            }
+        </script>
+    </div>
+<!--Los temas de Java (Fin)-->
+
+    <div id="Muckups" class="Muckups">
+        <h1>
+            Presentacion con Muckups, cambios y cosas nuevas en la Bitacora (Fecha:9-Oct-2025)
+        </h1>
+        <br>
+        <iframe src="img/PresentacióndeProyectoHolográficoCromoModernoAzulyGris.pdf" width="100%" height="100%"></iframe>
+        <a href="https://www.canva.com/design/DAG1V_-rPq4/FuO_kaX4roLJ1dSXesphig/edit?utm_content=DAG1V_-rPq4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">Ir a Canva</a>
+    </div>
+
+
+
+    <div id="Proyecto2" class="Proyecto2">
+        <h1>
+            Proyecto del parcial 2, cambios y cosas nuevas en la Bitacora (Fecha:13-Oct-2025)
+        </h1>
+        <br>
+        <p>
+            <h3>
+                Colores y signicado:
+            </h3>
+            Morado: Este lo usamos para dar a entender la magia, misterio, resolución de problemas
+            <br>
+            Naranja: Este se uso para dar a entenderatención y comodidad
+            <br><br>
+            <h3>
+                Tipografía y signicado:
+            </h3>
+            Libre Baskerville (para títulos)<br>
+            Esta tipografía es de tipo Serif. Con un estilo clásico, elegante, con contraste moderado entre trazos finos y gruesos. Su uso es ideal para títulos y encabezados por su gran legibilidad y presencia visual. Transmite una sensación de tradición, formalidad, sofisticación. Su particularidad es que fue diseñada específicamente para lectura en pantalla, mantiene buena legibilidad incluso en tamaños grandes. Usada para dar un impacto y elegancia.
+            <br>
+            Lora (para subtítulos)<br>
+            Esta tipogrfía es de tipo Serif moderna con toque humanista. Con un estilo equilibrado, con curvas suaves y detalles sutiles en los remates. Su uso principal es subtítulos o textos destacados ayudando a diferenciar información secundaria sin perder coherencia con títulos. Transmite una sencación de elegancia moderna, profesionalismo, calidez. Su particularidad es que ayuda a dar buena armonía con tipografías de texto más tradicionales. Usada para destacar sin competir con el título.
+            <br>
+            Merriweather (para textos)<br>
+            Esta tipografía es de tipo Serif. Con un estilo muy legible en tamaños pequeños, con un diseño robusto y ligeramente condensado. Su uso es ideal para cuerpos de texto, artículos o blogs. Transmite una sensación de claridad, seriedad y accesibilidad. Su particularidad es que fue diseñada para lectura en pantalla, con buen espaciado y contraste, evitando fatiga visual. Usada para dar legibilidad y cómodidad en la lectura.
+            <br><br>
+            <h3>
+                Empresas de competencia y que nos direfencia:
+            </h3>
+            Magics: Esta tiene legalidad dudusa, pueden ser de mala calidad, cuenta con publicidad excesiva, exceso de permisos solicitados y es costosa o puede ser engañosa.
+            <br>
+            Cuevana: Esta puede contar con problemas legales o derechos de autor, problemas de seguridad y malware, problemas en la calidad y confiabilidad, ecxeso de publicidad invasiva, problemas con la disponibilidad, los servidores, la privacidad y la mala atención al cliente.            
+            <br>
+            Dramabox: Esta no cuenta con fuentes verificadas, exceso de solicitud de permisos, publicidad molesta, asceso limitado al contenido a pesar d elas suscripciones, problemas con los derechos legales y tiene baja calidad y soporte.            
+            <br>
+            <br>
+        </p>
+        <br>
+        <iframe src="img/PROYECTOPARCIAL2.pdf" width="100%" height="100%"></iframe>
+        <a href="https://www.canva.com/design/DAG1sRoyC4s/Aha5pPTMVeOEhGJkDVcHfg/edit?utm_content=DAG1sRoyC4s&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">Ir a Canva</a>
+        <br><br><br>
+        <h3>
+            Enlaces adicionales a lo demás del proyecto:
+        </h3>
+        <br>
+        <h6>
+            A la Página del proyecto:
+        </h6>
+        <a href="https://rafaelcanof.github.io/Novelandia/?nombre=&correo=&mensaje=fdgf#inicio" target="_blank">Ir a Novelandia</a>
+        <br><br>
+        <h6>
+            A los Wiframes, Bocetos finos y Mapa de la página:
+        </h6>
+        <a href="https://www.figma.com/design/wXv6foBC3vFcz1Ll78NQdY/HTML-Adaptativo?node-id=7-5&t=f6uN4kggDd7A9hmB-1" target="_blank">Ir a Figma</a>
+        <br><br>
+        <h6>
+            Proceso en la plataforma:
+        </h6>
+        <a href="https://edumobile25-001-site1.anytempurl.com/login" target="_blank">Ir a la plataforma</a>
+    </div>
+
+
+    <!--Temas nuevos de Java(13-Oct-2025)-->
+    <div id="Operaciones" class="Operaciones">
+        <div id="OperacionesExplicacion" class="OperacionesExplicacion">
+            <h1>Explicacion de los códigos</h1><br>
+            <p>
+                <h3>Funciones</h3>
+                Una función (o método en Java) es un bloque de código que realiza una tarea específica. Se puede llamar varias veces sin tener que reescribir el mismo código.<br>
+                <h3>Funciones que retornan valores</h3>
+                Estas funciones devuelven un resultado al final de su ejecución usando la palabra clave return.<br>
+                <h3>Llamada a una función</h3>
+                Es cuando se ejecuta la función escribiendo su nombre seguido de paréntesis.<br>
+                <h3>Imprimir en consola el resultado de una funcion</h3>
+                Sirve para ver el resultado en la consola (de Java o del navegador).<br>
+                <h3>GetElementById</h3>
+                Es un método de JavaScript que sirve para acceder (o seleccionar) un elemento del documento HTML usando su atributo id. Cuando tienes muchos elementos en una página, cada uno puede tener un id único, y con getElementById puedes “llamarlo” desde JavaScript para cambiar su texto, color, estilo, o cualquier otra propiedad.<br>
+                document → representa toda la página web (el documento HTML).<br>
+                .getElementById() → función que busca un elemento.<br>
+                "idDelElemento" → el nombre exacto del id que pusiste en HTML.<br>
+                <h3>AddEventListener</h3>
+                Es un método de JavaScript que permite detectar y responder a eventos en los elementos HTML.<br>
+                elemento → el objeto HTML al que se le aplicará el evento.<br>
+                "tipoDeEvento" → el tipo de evento a escuchar (por ejemplo "click").<br>
+                funcionAEjecutar → el código que quieres que se ejecute cuando ocurra el evento.<br>
+            </p>
+        </div>
+        <div id="SeccionOperaciones" class="SeccionOperaciones">
+            <h1>Operaciones Matemáticas con Funciones</h1>
+
+            <!--nota: el placeholder es lo que esta en letras grices en espacios vacios para que el usuario ingrese algún dato-->
+            <input type="number" id="numA" placeholder="Número A">
+            <input type="number" id="numB" placeholder="Número B">
+            <!--Las funciones: (btn la abreviacion de boton)-->
+            <div>
+                <button id="btnSumar">Sumar</button>
+                <button id="btnRestar">Restar</button>
+                <button id="btnMultiplicar">Multiplicar</button>
+                <button id="btnDividir">Dividir</button>
+            </div>
+
+            <p id="resultadoOperaciones">El resultado aparecerá aquí</p>
+        </div>
+        <script>
+        // Funciones para cada operación que muestran un resultado dependiendo de la operación decidida a realizar (este es la llamada a la función)
+        function sumar(a, b) { return a + b; }
+        function restar(a, b) { return a - b; }
+        function multiplicar(a, b) { return a * b; }
+        function dividir(a, b) { 
+            if(b === 0) return "No se puede dividir entre 0";
+            return a / b; 
+        }
+
+        // Este ayuda a imprimir en la consola el mensaje inicial y el resultado de las operaciones
+        function mensajeInicial() {
+            console.log("Sección de operaciones cargada.");
+        }
+        mensajeInicial();
+
+        // Este ayuda a obtener los resultados la los numero ingrasados en numA, numB  y el de resultadoOperaciones
+        const inputA = document.getElementById("numA");
+        const inputB = document.getElementById("numB");
+        const resultado = document.getElementById("resultadoOperaciones");
+
+        const btnSumar = document.getElementById("btnSumar");
+        const btnRestar = document.getElementById("btnRestar");
+        const btnMultiplicar = document.getElementById("btnMultiplicar");
+        const btnDividir = document.getElementById("btnDividir");
+
+        // Este ayuda a dar el resultado en pantalla (y aqui se imprime cada función llamada, mostrando el resultado de la misma)
+        btnSumar.addEventListener("click", function() {
+            const res = sumar(Number(inputA.value), Number(inputB.value));
+            resultado.textContent = "Resultado: " + res;
+        });
+
+        btnRestar.addEventListener("click", function() {
+            const res = restar(Number(inputA.value), Number(inputB.value));
+            resultado.textContent = "Resultado: " + res;
+        });
+
+        btnMultiplicar.addEventListener("click", function() {
+            const res = multiplicar(Number(inputA.value), Number(inputB.value));
+            resultado.textContent = "Resultado: " + res;
+        });
+
+        btnDividir.addEventListener("click", function() {
+            const res = dividir(Number(inputA.value), Number(inputB.value));
+            resultado.textContent = "Resultado: " + res;
+        });
+        </script>
+    </div>
+
+
+    <footer id="Final" class="Final">
+        <p>
+            Jaqueline Paola Villa Carreón <br>
+            230328 <br>
+            Grupo A <br>
+            HTML y CSS3 adaptativo
+        </p>
+    </footer>
+</body>
+</html>
